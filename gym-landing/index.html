@@ -23,42 +23,66 @@
         </script>
     </head>
     <body class="font-sans bg-gray-100">
-        <header class="bg-primary text-white">
-            <nav
-                class="container mx-auto px-6 py-3 flex justify-between items-center"
+        <header
+            class="bg-primary text-white py-6 fixed w-full z-50 transition-all duration-300"
+            id="floating-header"
+        >
+            <div
+                class="container mx-auto px-6 flex justify-between items-center"
             >
-                <a href="#" class="text-2xl font-bold">FitLife Gym</a>
-                <div class="hidden md:flex space-x-4">
-                    <a
-                        href="#about"
-                        class="hover:text-secondary transition duration-300"
-                        >About</a
+                <div class="flex items-center">
+                    <a href="#" class="text-3xl font-bold mr-8 text-current"
+                        >FitLife Gym</a
                     >
-                    <a
-                        href="#classes"
-                        class="hover:text-secondary transition duration-300"
-                        >Classes</a
-                    >
+                    <nav class="hidden md:flex space-x-6">
+                        <a
+                            href="#about"
+                            class="text-lg text-current hover:text-secondary transition"
+                            >About</a
+                        >
+                        <a
+                            href="#classes"
+                            class="text-lg text-current hover:text-secondary transition"
+                            >Classes</a
+                        >
+                        <a
+                            href="#pricing"
+                            class="text-lg text-current hover:text-secondary transition"
+                            >Pricing</a
+                        >
+                        <a
+                            href="#contact"
+                            class="text-lg text-current hover:text-secondary transition"
+                            >Contact</a
+                        >
+                    </nav>
+                </div>
+                <div class="flex items-center">
                     <a
                         href="#pricing"
-                        class="hover:text-secondary transition duration-300"
-                        >Pricing</a
-                    >
-                    <a
-                        href="#contact"
-                        class="hover:text-secondary transition duration-300"
-                        >Contact</a
+                        class="bg-secondary text-white font-bold py-2 px-6 rounded-full hover:bg-white hover:text-primary transition mr-8"
+                        >Join Now</a
                     >
                 </div>
-            </nav>
+            </div>
         </header>
 
         <main>
             <section
                 id="hero"
-                class="bg-gradient-to-r from-primary to-secondary text-white py-20"
+                class="relative bg-gradient-to-r from-primary to-secondary text-white h-screen"
             >
-                <div class="container mx-auto px-6 text-center">
+                <div class="absolute inset-0">
+                    <img
+                        src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1"
+                        alt="Hero Image"
+                        class="w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                </div>
+                <div
+                    class="container mx-auto px-6 text-center relative z-10 py-32 h-full flex flex-col justify-center"
+                >
                     <h1
                         class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-down"
                     >
@@ -69,151 +93,521 @@
                     </p>
                     <a
                         href="#pricing"
-                        class="bg-white text-primary font-bold py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300 animate-pulse"
+                        class="bg-white text-primary font-bold py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300 animate-pulse inline-block mx-auto"
                         >Get Started</a
                     >
                 </div>
             </section>
 
-            <section id="about" class="py-16">
+            <section id="about" class="py-24 bg-gray-100">
                 <div class="container mx-auto px-6">
-                    <h2 class="text-3xl font-bold text-center mb-8">
-                        About FitLife Gym
+                    <h2
+                        class="text-4xl font-bold text-center mb-12 text-primary"
+                    >
+                        Elevate Your Fitness Journey
                     </h2>
-                    <div class="flex flex-wrap -mx-4">
-                        <div class="w-full md:w-1/2 px-4 mb-8">
+                    <div class="flex flex-wrap items-center -mx-4">
+                        <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
                             <img
-                                src="https://source.unsplash.com/random/800x600?gym"
-                                alt="Gym Equipment"
-                                class="rounded-lg shadow-lg"
+                                src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1280&h=853&dpr=1"
+                                alt="Modern Gym Equipment"
+                                class="rounded-xl shadow-2xl w-full h-auto object-cover"
                             />
                         </div>
-                        <div class="w-full md:w-1/2 px-4">
-                            <p class="text-gray-700 mb-4">
-                                At FitLife Gym, we're committed to helping you
-                                achieve your fitness goals in a supportive and
-                                motivating environment. Our state-of-the-art
-                                facilities and expert trainers are here to guide
-                                you every step of the way.
-                            </p>
-                            <ul class="list-disc list-inside text-gray-700">
-                                <li>24/7 access to our fully-equipped gym</li>
-                                <li>Wide range of group fitness classes</li>
-                                <li>Personal training sessions available</li>
-                                <li>Clean and sanitized facilities</li>
-                            </ul>
+                        <div class="w-full lg:w-1/2 px-4">
+                            <div class="bg-white rounded-xl shadow-xl p-8">
+                                <h3
+                                    class="text-2xl font-semibold mb-4 text-secondary"
+                                >
+                                    About FitLife Gym
+                                </h3>
+                                <p class="text-gray-700 mb-6 leading-relaxed">
+                                    At FitLife Gym, we're not just a gym – we're
+                                    your partner in transformation. Our
+                                    cutting-edge facilities and passionate
+                                    trainers are dedicated to guiding you
+                                    towards your peak performance and
+                                    well-being.
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center text-gray-700">
+                                        <svg
+                                            class="w-5 h-5 mr-2 text-green-500"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        24/7 access to state-of-the-art
+                                        equipment
+                                    </li>
+                                    <li class="flex items-center text-gray-700">
+                                        <svg
+                                            class="w-5 h-5 mr-2 text-green-500"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        Diverse range of innovative fitness
+                                        classes
+                                    </li>
+                                    <li class="flex items-center text-gray-700">
+                                        <svg
+                                            class="w-5 h-5 mr-2 text-green-500"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        Personalized training with expert
+                                        coaches
+                                    </li>
+                                    <li class="flex items-center text-gray-700">
+                                        <svg
+                                            class="w-5 h-5 mr-2 text-green-500"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd"
+                                            />
+                                        </svg>
+                                        Pristine, sanitized environment for your
+                                        safety
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="classes" class="bg-gray-200 py-16">
+            <section id="classes" class="bg-gray-200 py-24">
                 <div class="container mx-auto px-6">
-                    <h2 class="text-3xl font-bold text-center mb-8">
+                    <h2
+                        class="text-4xl font-bold text-center mb-16 text-primary"
+                    >
                         Our Classes
                     </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div
-                            class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300"
-                        >
-                            <h3 class="text-xl font-bold mb-4">Yoga</h3>
-                            <p class="text-gray-700">
-                                Find your inner peace and improve flexibility
-                                with our expert-led yoga classes.
-                            </p>
+                    <div class="space-y-24">
+                        <!-- Yoga Class -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                                <div class="bg-white rounded-xl shadow-xl p-8">
+                                    <h3
+                                        class="text-3xl font-bold text-secondary mb-4"
+                                    >
+                                        Yoga
+                                    </h3>
+                                    <p class="text-gray-700 mb-6">
+                                        Find your inner peace and improve
+                                        flexibility with our expert-led yoga
+                                        classes. Our sessions cater to all
+                                        levels, from beginners to advanced
+                                        practitioners.
+                                    </p>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg
+                                                class="w-5 h-5 mr-2 text-green-500"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            Improved flexibility and balance
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg
+                                                class="w-5 h-5 mr-2 text-green-500"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            Stress reduction and relaxation
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg
+                                                class="w-5 h-5 mr-2 text-green-500"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            Improved posture and body awareness
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <img
+                                    src="https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                    alt="Yoga Class"
+                                    class="rounded-lg shadow-lg w-full h-auto object-cover"
+                                />
+                            </div>
                         </div>
+
+                        <!-- HIIT Class -->
                         <div
-                            class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300"
+                            class="flex flex-col md:flex-row-reverse items-center"
                         >
-                            <h3 class="text-xl font-bold mb-4">HIIT</h3>
-                            <p class="text-gray-700">
-                                Burn calories and boost your metabolism with our
-                                high-intensity interval training sessions.
-                            </p>
+                            <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pl-8">
+                                <div class="bg-white rounded-xl shadow-xl p-8">
+                                    <h3
+                                        class="text-3xl font-bold text-secondary mb-4"
+                                    >
+                                        HIIT
+                                    </h3>
+                                    <p class="text-gray-700 mb-6">
+                                        Burn calories and boost your metabolism
+                                        with our high-intensity interval
+                                        training sessions. These classes are
+                                        designed to push your limits and achieve
+                                        maximum results in minimal time.
+                                    </p>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg
+                                                class="w-5 h-5 mr-2 text-green-500"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            Rapid calorie burn and fat loss
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg
+                                                class="w-5 h-5 mr-2 text-green-500"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            Improved cardiovascular endurance
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg
+                                                class="w-5 h-5 mr-2 text-green-500"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            Increased metabolism and afterburn
+                                            effect
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <img
+                                    src="https://images.unsplash.com/photo-1434596922112-19c563067271?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                    alt="HIIT Class"
+                                    class="rounded-lg shadow-lg w-full h-auto object-cover"
+                                />
+                            </div>
                         </div>
-                        <div
-                            class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300"
-                        >
-                            <h3 class="text-xl font-bold mb-4">
-                                Strength Training
-                            </h3>
-                            <p class="text-gray-700">
-                                Build muscle and increase your strength with our
-                                comprehensive weight training programs.
-                            </p>
+
+                        <!-- Strength Training Class -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                                <div class="bg-white rounded-xl shadow-xl p-8">
+                                    <h3
+                                        class="text-3xl font-bold text-secondary mb-4"
+                                    >
+                                        Strength Training
+                                    </h3>
+                                    <p class="text-gray-700 mb-6">
+                                        Build muscle and increase your strength
+                                        with our comprehensive weight training
+                                        programs. Our expert trainers will guide
+                                        you through proper form and technique to
+                                        maximize your results.
+                                    </p>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg
+                                                class="w-5 h-5 mr-2 text-green-500"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            Increased muscle mass and definition
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg
+                                                class="w-5 h-5 mr-2 text-green-500"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            Enhanced bone density and joint
+                                            health
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg
+                                                class="w-5 h-5 mr-2 text-green-500"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                            Improved overall strength and
+                                            functional fitness
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <img
+                                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                    alt="Strength Training Class"
+                                    class="rounded-lg shadow-lg w-full h-auto object-cover"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="pricing" class="py-16">
+            <section id="testimonials" class="bg-white py-16">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center mb-8">
+                        What Our Members Say
+                    </h2>
+                    <div class="testimonial-slider max-w-2xl mx-auto">
+                        <div class="testimonial-slide">
+                            <img
+                                src="https://randomuser.me/api/portraits/women/65.jpg"
+                                alt="Happy Member 1"
+                                class="w-24 h-24 rounded-full mx-auto mb-4"
+                            />
+                            <p class="text-gray-700 mb-2 text-center">
+                                "FitLife Gym has transformed my life! I've never
+                                felt healthier and stronger."
+                            </p>
+                            <p class="font-bold text-center">- Sarah J.</p>
+                        </div>
+                        <div class="testimonial-slide hidden">
+                            <img
+                                src="https://randomuser.me/api/portraits/men/32.jpg"
+                                alt="Happy Member 2"
+                                class="w-24 h-24 rounded-full mx-auto mb-4"
+                            />
+                            <p class="text-gray-700 mb-2 text-center">
+                                "The trainers here are amazing. They've helped
+                                me achieve goals I never thought possible."
+                            </p>
+                            <p class="font-bold text-center">- Mike T.</p>
+                        </div>
+                        <div class="testimonial-slide hidden">
+                            <img
+                                src="https://randomuser.me/api/portraits/women/44.jpg"
+                                alt="Happy Member 3"
+                                class="w-24 h-24 rounded-full mx-auto mb-4"
+                            />
+                            <p class="text-gray-700 mb-2 text-center">
+                                "I love the community at FitLife. It's not just
+                                a gym, it's a family."
+                            </p>
+                            <p class="font-bold text-center">- Emily R.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mt-4">
+                        <button
+                            class="mx-2 p-2 rounded-full bg-white hover:bg-gray-100 w-10 h-10 flex items-center justify-center"
+                            onclick="changeTestimonial(-1)"
+                        >
+                            &#10094;
+                        </button>
+                        <button
+                            class="mx-2 p-2 rounded-full bg-white hover:bg-gray-100 w-10 h-10 flex items-center justify-center"
+                            onclick="changeTestimonial(1)"
+                        >
+                            &#10095;
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing" class="bg-gray-200 py-16">
                 <div class="container mx-auto px-6">
                     <h2 class="text-3xl font-bold text-center mb-8">
                         Membership Plans
                     </h2>
+                    <div class="flex justify-center items-center mb-8">
+                        <div
+                            class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in"
+                        >
+                            <input
+                                type="checkbox"
+                                name="toggle"
+                                id="toggle"
+                                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform duration-200 ease-in-out"
+                            />
+                            <label
+                                for="toggle"
+                                class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
+                            ></label>
+                        </div>
+                        <span class="text-gray-700 font-medium text-sm"
+                            >Monthly</span
+                        >
+                        <span class="mx-2 text-gray-700 font-medium text-sm"
+                            >/</span
+                        >
+                        <span class="text-gray-700 font-medium text-sm"
+                            >Yearly</span
+                        >
+                    </div>
                     <div class="flex flex-wrap justify-center -mx-4">
-                        <div class="w-full md:w-1/3 px-4 mb-8">
+                        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
                             <div
-                                class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300"
+                                class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 h-full flex flex-col justify-between"
                             >
-                                <h3 class="text-xl font-bold mb-4">Basic</h3>
-                                <p class="text-3xl font-bold mb-4">
-                                    $29.99<span class="text-sm font-normal"
-                                        >/month</span
-                                    >
-                                </p>
-                                <ul class="text-gray-700 mb-6">
-                                    <li>✓ 24/7 Gym Access</li>
-                                    <li>✓ Basic Equipment Usage</li>
-                                    <li>✓ Locker Room Access</li>
-                                </ul>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-4">
+                                        Basic
+                                    </h3>
+                                    <p class="text-3xl font-bold mb-4">
+                                        <span class="monthly-price"
+                                            >$29.99<span
+                                                class="text-sm font-normal"
+                                                >/month</span
+                                            ></span
+                                        >
+                                        <span class="yearly-price hidden"
+                                            >$299.99<span
+                                                class="text-sm font-normal"
+                                                >/year</span
+                                            ></span
+                                        >
+                                    </p>
+                                    <ul class="text-gray-700 mb-6">
+                                        <li>✓ 24/7 Gym Access</li>
+                                        <li>✓ Basic Equipment Usage</li>
+                                        <li>✓ Locker Room Access</li>
+                                        <li>✓ Free Wifi</li>
+                                        <li>✓ Monthly Fitness Assessment</li>
+                                        <li>✓ Access to Mobile App</li>
+                                        <li>✓ 10% Discount on Supplements</li>
+                                    </ul>
+                                </div>
                                 <a
                                     href="#"
-                                    class="block text-center bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary transition duration-300"
+                                    class="block text-center text-white font-bold py-2 px-4 rounded transition duration-300"
+                                    style="
+                                        background: linear-gradient(
+                                            to right,
+                                            #4caf50,
+                                            #45a049
+                                        );
+                                    "
                                     >Choose Plan</a
                                 >
                             </div>
                         </div>
-                        <div class="w-full md:w-1/3 px-4 mb-8">
+                        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
                             <div
-                                class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300"
+                                class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 h-full flex flex-col justify-between"
                             >
-                                <h3 class="text-xl font-bold mb-4">Premium</h3>
-                                <p class="text-3xl font-bold mb-4">
-                                    $49.99<span class="text-sm font-normal"
-                                        >/month</span
-                                    >
-                                </p>
-                                <ul class="text-gray-700 mb-6">
-                                    <li>✓ All Basic Features</li>
-                                    <li>✓ Unlimited Group Classes</li>
-                                    <li>✓ Personalized Workout Plan</li>
-                                </ul>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-4">
+                                        Premium
+                                    </h3>
+                                    <p class="text-3xl font-bold mb-4">
+                                        <span class="monthly-price"
+                                            >$49.99<span
+                                                class="text-sm font-normal"
+                                                >/month</span
+                                            ></span
+                                        >
+                                        <span class="yearly-price hidden"
+                                            >$499.99<span
+                                                class="text-sm font-normal"
+                                                >/year</span
+                                            ></span
+                                        >
+                                    </p>
+                                    <ul class="text-gray-700 mb-6">
+                                        <li>✓ All Basic Features</li>
+                                        <li>✓ Unlimited Group Classes</li>
+                                        <li>✓ Personalized Workout Plan</li>
+                                        <li>✓ Nutrition Consultation</li>
+                                        <li>
+                                            ✓ 1 Personal Training Session/month
+                                        </li>
+                                        <li>✓ Access to Sauna and Spa</li>
+                                        <li>✓ 20% Discount on Supplements</li>
+                                        <li>✓ Priority Booking for Classes</li>
+                                    </ul>
+                                </div>
                                 <a
                                     href="#"
-                                    class="block text-center bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary transition duration-300"
-                                    >Choose Plan</a
-                                >
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/3 px-4 mb-8">
-                            <div
-                                class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300"
-                            >
-                                <h3 class="text-xl font-bold mb-4">Elite</h3>
-                                <p class="text-3xl font-bold mb-4">
-                                    $79.99<span class="text-sm font-normal"
-                                        >/month</span
-                                    >
-                                </p>
-                                <ul class="text-gray-700 mb-6">
-                                    <li>✓ All Premium Features</li>
-                                    <li>✓ Personal Training Sessions</li>
-                                    <li>✓ Nutrition Consultation</li>
-                                </ul>
-                                <a
-                                    href="#"
-                                    class="block text-center bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary transition duration-300"
+                                    class="block text-center text-white font-bold py-2 px-4 rounded transition duration-300"
+                                    style="
+                                        background: linear-gradient(
+                                            to right,
+                                            #4caf50,
+                                            #45a049
+                                        );
+                                    "
                                     >Choose Plan</a
                                 >
                             </div>
@@ -222,62 +616,99 @@
                 </div>
             </section>
 
-            <section id="contact" class="bg-gray-200 py-16">
+            <section id="contact" class="bg-white py-16">
                 <div class="container mx-auto px-6">
                     <h2 class="text-3xl font-bold text-center mb-8">
                         Contact Us
                     </h2>
-                    <div class="max-w-lg mx-auto">
-                        <form class="bg-white rounded-lg shadow-lg p-6">
-                            <div class="mb-4">
-                                <label
-                                    for="name"
-                                    class="block text-gray-700 font-bold mb-2"
-                                    >Name</label
-                                >
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                                    required
-                                />
-                            </div>
-                            <div class="mb-4">
-                                <label
-                                    for="email"
-                                    class="block text-gray-700 font-bold mb-2"
-                                    >Email</label
-                                >
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                                    required
-                                />
-                            </div>
-                            <div class="mb-4">
-                                <label
-                                    for="message"
-                                    class="block text-gray-700 font-bold mb-2"
-                                    >Message</label
-                                >
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    rows="4"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                                    required
-                                ></textarea>
-                            </div>
-                            <button
-                                type="submit"
-                                class="w-full bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary transition duration-300"
+                    <div class="flex flex-wrap -mx-4">
+                        <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
+                            <div
+                                class="bg-white rounded-lg shadow-lg p-6 h-full flex flex-col justify-between"
                             >
-                                Send Message
-                            </button>
-                        </form>
+                                <div>
+                                    <h3 class="text-2xl font-bold mb-4">
+                                        Get in Touch
+                                    </h3>
+                                    <p class="text-gray-700 mb-4">
+                                        Have questions or want to learn more
+                                        about our gym? Feel free to reach out to
+                                        us. We're here to help!
+                                    </p>
+                                    <ul class="text-gray-700">
+                                        <li class="mb-2">
+                                            <strong>Address:</strong> 123
+                                            Fitness Street, Healthyville, FL
+                                            12345
+                                        </li>
+                                        <li class="mb-2">
+                                            <strong>Phone:</strong> (555)
+                                            123-4567
+                                        </li>
+                                        <li class="mb-2">
+                                            <strong>Email:</strong>
+                                            info@fitlifegym.com
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 px-4">
+                            <form
+                                class="bg-white rounded-lg shadow-lg p-6 h-full flex flex-col justify-between"
+                            >
+                                <div>
+                                    <div class="mb-4">
+                                        <label
+                                            for="name"
+                                            class="block text-gray-700 font-bold mb-2"
+                                            >Name</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="mb-4">
+                                        <label
+                                            for="email"
+                                            class="block text-gray-700 font-bold mb-2"
+                                            >Email</label
+                                        >
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="mb-4">
+                                        <label
+                                            for="message"
+                                            class="block text-gray-700 font-bold mb-2"
+                                            >Message</label
+                                        >
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            rows="4"
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                            required
+                                        ></textarea>
+                                    </div>
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="w-full bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary transition duration-300"
+                                >
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -288,5 +719,90 @@
                 <p>&copy; 2023 FitLife Gym. All rights reserved.</p>
             </div>
         </footer>
+
+        <script>
+            // Floating header
+            window.addEventListener("scroll", () => {
+                const header = document.getElementById("floating-header");
+                if (window.scrollY > 100) {
+                    header.classList.add(
+                        "bg-white",
+                        "text-primary",
+                        "shadow-lg"
+                    );
+                    header.classList.remove("bg-primary", "text-white");
+                } else {
+                    header.classList.remove(
+                        "bg-white",
+                        "text-primary",
+                        "shadow-lg"
+                    );
+                    header.classList.add("bg-primary", "text-white");
+                }
+            });
+
+            // Pricing toggle
+            document.addEventListener("DOMContentLoaded", function () {
+                const toggle = document.getElementById("toggle");
+                const toggleLabel = document.querySelector(".toggle-label");
+                const toggleBall = document.querySelector(".toggle-checkbox");
+                const monthlyPrices =
+                    document.querySelectorAll(".monthly-price");
+                const yearlyPrices = document.querySelectorAll(".yearly-price");
+
+                toggle.addEventListener("change", function () {
+                    if (this.checked) {
+                        monthlyPrices.forEach((price) =>
+                            price.classList.add("hidden")
+                        );
+                        yearlyPrices.forEach((price) =>
+                            price.classList.remove("hidden")
+                        );
+                        toggleLabel.classList.add("bg-primary");
+                        toggleLabel.classList.remove("bg-gray-300");
+                        toggleBall.style.transform = "translateX(100%)";
+                    } else {
+                        monthlyPrices.forEach((price) =>
+                            price.classList.remove("hidden")
+                        );
+                        yearlyPrices.forEach((price) =>
+                            price.classList.add("hidden")
+                        );
+                        toggleLabel.classList.remove("bg-primary");
+                        toggleLabel.classList.add("bg-gray-300");
+                        toggleBall.style.transform = "translateX(0)";
+                    }
+                });
+            });
+
+            // Testimonials
+            let currentTestimonial = 0;
+            const testimonials =
+                document.querySelectorAll(".testimonial-slide");
+
+            function changeTestimonial(direction) {
+                testimonials[currentTestimonial].classList.add("hidden");
+                currentTestimonial =
+                    (currentTestimonial + direction + testimonials.length) %
+                    testimonials.length;
+                testimonials[currentTestimonial].classList.remove("hidden");
+            }
+
+            // Auto-change testimonials
+            function autoChangeTestimonial() {
+                changeTestimonial(1);
+            }
+
+            // Set interval for auto-changing testimonials (every 5 seconds)
+            setInterval(autoChangeTestimonial, 5000);
+
+            // Add click event listeners to testimonial navigation buttons
+            document
+                .querySelector('button[onclick="changeTestimonial(-1)"]')
+                .addEventListener("click", () => changeTestimonial(-1));
+            document
+                .querySelector('button[onclick="changeTestimonial(1)"]')
+                .addEventListener("click", () => changeTestimonial(1));
+        </script>
     </body>
 </html>
